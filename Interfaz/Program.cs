@@ -37,9 +37,20 @@ namespace Interfaz
                         int edad=Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Dame la matricula");
                         int matricula=Convert.ToInt32(Console.ReadLine());
-                        
+                        acciones.Agregar(matricula, nombre, edad);
                         break;
                     case Menu.Actualizar:
+                        Console.WriteLine("Dame la matrícula del alumno a actualizar:");
+                        int matActualizar = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Nuevo nombre:");
+                        string nuevoNombre = Console.ReadLine();
+
+                        Console.WriteLine("Nueva edad:");
+                        int nuevaEdad = Convert.ToInt32(Console.ReadLine());
+
+                        acciones.Actualizar(matActualizar, nuevoNombre, nuevaEdad);
+
                         break;
                     case Menu.Eliminar:
                         break;

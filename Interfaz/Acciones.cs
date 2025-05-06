@@ -14,7 +14,18 @@ namespace Interfaz
         new Alumno("Araceli",20,115690)};
         public void Actualizar(int matricula, string nombre, int edad)
         {
-            throw new NotImplementedException();
+            var alumno = listalumnos.FirstOrDefault(x => x.Matricula == matricula);
+            if (alumno != null)
+            {
+                alumno.Nombre = nombre;
+                alumno.Edad = edad;
+                Console.WriteLine("Alumno actualizado correctamente.");
+            }
+            else
+            {
+                Console.WriteLine("Alumno no encontrado.");
+            }
+
         }
 
         public void Agregar(int matricula, string nombre, int edad)
